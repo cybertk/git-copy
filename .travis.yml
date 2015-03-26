@@ -1,10 +1,11 @@
 language: ruby
 rvm:
 - 2.0.0
-- 2.1.0
 deploy:
   provider: rubygems
   api_key:
-    secure: 0ZuJnpBrAu4KyktsBybPw8r+SpF2ikK/lc5GVH89m833kRBnWWOrH9JQMYf4TXG/ZUgMlCPqfTrbt/nUmFHj71kIrAh/Ebm2gEjzgKhdJF9cUXPHMbgzRcxA30bxxrlrP+wSacZy9GQmmlG00/L+RUUJLEFczjunoMLkUfT0FlU=
+    secure: iLK75fek/gb6iDaEzOB44npnoWdiOwjiM/kx1xKGVOVGwyRGbLo0doZh+wnDz2GBdvzJTlaWmHDtCovhCTShNsbTlvRBf9gNg1TwDQmed5NqokEpSPESiCaJSTwTYYCafpRVgEXxtYDb/O6rfsLKptfKsc6OKdRJNKwzblsgzlI=
+  gem: git-copy
   on:
-    tags: true
+    repo: cybertk/git-copy
+    branch: release
