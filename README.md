@@ -7,8 +7,15 @@
 
 ## Getting Started
 
-  sudo gem install git-copy
-  git copy https://github.com/cybertk/git-copy.git https://github.com/cybertk/git-copy.git
+    sudo gem install git-copy
+    git copy https://github.com/cybertk/git-copy.git https://github.com/cybertk/git-copy.git
+
+### Examples
+
+Copy this repo to a local hosted git server
+
+    git init --bare git-copy.git
+    git copy https://github.com/cybertk/git-copy.git $PWD/git-copy.git
 
 ## Contribution
 
