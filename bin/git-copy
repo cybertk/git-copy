@@ -1,0 +1,45 @@
+#!/usr/bin/env ruby
+#
+
+require "optparse"
+require "tmpdir"
+
+def GitCopy(src, dst)
+  # Copy a remote git repo to another remote destination
+  #
+  # Example:
+  #   >> GitCopy("https://github.com/cybertk/git-copy", "mirror.git")
+  Dir.mktmpdir("git-copy") do |dir|
+    # Clone source into temp working dir
+    `git clone --bare #{src} #{dir}`
+    return if $? != 0
+
+    Dir.chdir(dir)
+    `git push -f --mirror #{dst}`
+    return if $? != 0
+  end
+
+end
+
+options = {}
+optparse = OptionParser.new do |opts|
+  opts.banner = "Usage: git copy <source_repo> <destination_repo>"
+  opts.on("-h", "--help", "Display this screen") do
+    puts opts
+    exit
+  end
+
+  opts.on_tail("--version", "Show version") do
+    puts ::Version.join(".")
+    exit
+  end
+
+  if ARGV.size != 2 then
+    puts "You must specify source and destination repositories."
+    puts ""
+    puts opts
+    exit
+  end
+end.parse!
+
+GitCopy(ARGV[0], ARGV[1])
