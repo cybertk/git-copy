@@ -9,7 +9,7 @@ def GitCopy(src, dst)
   #
   # Example:
   #   >> GitCopy("https://github.com/cybertk/git-copy", "mirror.git")
-  Dir.mktmpdir("git-copy") do |dir|
+  Dir.mktmpdir("git-copy-") do |dir|
     # Clone source into temp working dir
     `git clone --bare #{src} #{dir}`
     return if $? != 0
