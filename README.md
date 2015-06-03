@@ -1,6 +1,6 @@
 ## git-copy
 
-> Git plugin for copy remote git repo to another remote destination
+> Git plugin for copy remote/local git repo to another remote/local destination
 
 [![Gem](https://img.shields.io/gem/v/git-copy.svg)](https://rubygems.org/gems/git-copy)
 [![Build Status](https://travis-ci.org/cybertk/git-copy.svg?branch=master)](https://travis-ci.org/cybertk/git-copy)
