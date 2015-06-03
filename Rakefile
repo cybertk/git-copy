@@ -4,8 +4,4 @@ begin
 rescue LoadError
 end
 
-task :cli_test do
-    sh './cli-test.sh'
-end
-
-task :default => [:spec, :cli_test]
+task :default => :spec
