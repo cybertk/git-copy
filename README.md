@@ -4,6 +4,7 @@
 
 [![Gem](https://img.shields.io/gem/v/git-copy.svg)](https://rubygems.org/gems/git-copy)
 [![Build Status](https://travis-ci.org/cybertk/git-copy.svg?branch=master)](https://travis-ci.org/cybertk/git-copy)
+[![Dependency Status](https://gemnasium.com/cybertk/git-copy.svg)](https://gemnasium.com/cybertk/git-copy)
 
 ## Getting Started
 
