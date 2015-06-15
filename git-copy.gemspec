@@ -2,7 +2,7 @@ $:.unshift File.expand_path("../lib", __FILE__)
 
 Gem::Specification.new do |spec|
   spec.name    = "git-copy"
-  spec.version = "0.2.0"
+  spec.version = "0.2.1"
 
   spec.author      = "Quanlong He"
   spec.email       = "kyan.ql.he@gmail.com"
