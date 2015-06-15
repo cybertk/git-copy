@@ -18,16 +18,19 @@ module Git
 
       Dir.mktmpdir('git-copy-') do |dir|
         # Clone source into temp working dir
-        `git clone --bare #{src} #{dir}`
-        return if $CHILD_STATUS != 0
+        unless `git clone --bare #{src} #{dir}`.to_i == 0
+          raise 'git clone faild'
+        end
 
-        `cd #{dir}; git push -f --mirror #{dst}`
-        return if $CHILD_STATUS != 0
+        unless `cd #{dir}; git push -f --mirror #{dst}`.to_i == 0
+          raise 'git push faild'
+        end
       end
     else
       # Copy to local path
-      `git clone --bare #{src} #{dst}`
-      return if $CHILD_STATUS != 0
+      unless `git clone --bare #{src} #{dst}`.to_i == 0
+        raise 'git clone failed'
+      end
     end
 
   end
